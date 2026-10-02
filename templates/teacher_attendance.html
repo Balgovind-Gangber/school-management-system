@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}
+student attendance
+{% endblock %}
+
+{% block content %}
+ <div class="container">
+     <h1 class=" text-center" style="background-color: #485F6E  ">student attendance</h1>
+    <div class="card card-body m-0" style="align-content: center ">
+       <form  action="/teacher/attendance", methods=["POST"]>
+        <label> class: </label>
+        <select name="class_name" required>
+            <option value="9" {% if class_name=="9" %} selected{% endif %} > Class 9 </option>
+            <option value="10" {% if class_name=="10" %} selected{% endif %} > Class 10 </option>
+        </select>
+        <label> attendance date </label>
+        <input type="date" name="attendance_date" value="{{attendance_date}}" required>
+        <button type="submit">Show student</button>
+
+    </form>
+
+
+    </div>
+
+
+ </div>
+
+    <div class="container my-2" style="align-content: center ">
+      <form action="/teacher/attendance/save" method="Post">
+            <input type="hidden" name="class_name" value="{{class_name}}">
+            <input type="hidden" name="attendance_date" value="{{attendance_date}}">
+            <table border="1" cellpadding="10">
+                 <tr>
+            <th> student id</th>
+            <th>student name</th>
+            <th>status</th>
+            </tr>
+               {% for student in students %}
+                    <tr>
+                        <td>{{student.id}}</td>
+                        <td>{{student.student_name}}</td>
+                        <td><input type="radio" name="status_{{student.id}}" value="present" checked> present
+                            <input type="radio" name="status_{{student.id}}" value="absent"> absent</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </br>
+            <button type="submit">Save attendance </button>
+
+
+    </form>
+
+    </div>
+
+
+{% endblock %}

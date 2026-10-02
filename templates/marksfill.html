@@ -1,0 +1,53 @@
+{%extends 'base.html' %}
+
+{% block content %}
+
+
+hello marks fill here
+<div class="container">
+    <div class="card card-body m-0" style="align-content: center ">
+                    <form  action="/search", methods=["POST"]>
+                        <label> Class: </label>
+                        <select name="class_name" required>
+                             <option value="9"  > Class 9 </option>
+                            <option value="10" > Class 10 </option>
+                        </select>
+                        <button type="submit">Show student</button>
+
+                   </form>
+                </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-responsive table-bordered table-striped text-center">
+                     <thead >
+                     <tr>
+                                <th class="fw-bold">Student Name </th>
+                                <th> Father name  </th>
+                                <th> Class name  </th>
+                                <th> status  </th>
+                                <th> User id</th>
+                                <th> pay fees </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for student in student %}
+                                 <tr>
+                                     <td class="fw-bold">{{ student.student_name }}</td>
+                                     <td><span class="badge bg-success">{{ student.father_name }}</span></td>
+                                     <td><span class="badge bg-success">{{ student.class_name }}</span></td>
+                                     <td><span class="badge bg-primary">{{ student.status }}</span></td>
+                                     <td>{{ student.user_id }}</td>
+                                     <td> <a href="/teacher/fees/student/{{student.user_id}}"> pay now </a></td>
+                                 </tr>
+                            {% endfor %}
+
+                                      </tbody>
+                                      </table>
+                    </div>
+
+
+</div>
+
+
+
+{% endblock%}

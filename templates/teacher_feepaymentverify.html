@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+display student fee detail
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <form action="#" method="post">
+      <label> student id:</label> {{student_id}}<br>
+      <label> student name:</label> {{student.student_name}}<br>
+      <label> father name:</label> {{student.father_name}}<br>
+      <label> class name:</label> {{student.class_name}}<br>
+      <label>  total fee: </label> {{student.total_fee}}<br>
+      <label>  prevoius paid amount: </label> {{student.previous_amount}}<br>
+      <label> paid amount</label> <input type ="text" name = "paid_amount" id = "paid_amount"><br>
+      <label> balance  amount</label><input type ="text" name = "balance_amount" id = "balance_amount"><br>
+      <button type = "submit" name = "submit" id = "submit"> verify </button>
+
+{% block content %}
+
+
+
+
+
+
+
+
+  </form>
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

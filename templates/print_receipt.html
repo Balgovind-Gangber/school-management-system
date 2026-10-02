@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title%}
+print receipt\
+{% endblock %}
+
+{% block content %}
+<h1> print receipt</h1>
+
+    {{new_deposit.receipt_no}}
+    {{new_deposit.payment_mode}}
+<button onclick="window.print()">Print</button>
+{%endblock%}

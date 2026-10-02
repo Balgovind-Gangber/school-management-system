@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title> fees payment </title>
+</head>
+<body>
+    <button> all student list</button>
+    <h2> all student list</h2>
+    {% for student in student %}
+        {{ student.student_name }} |{{ student.father_name }}|{{student.status}}| {{student.user_id}}
+        <a href='/teacher/feepayment/verify/{{student.id}}'>
+          <button class="button">pay now</button> </a>
+    <br><br>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Government High School Gujra </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="static/style.css" >
+    <link rel="stylesheet" href="static/media.css" >
+</head>
+<body>
+<header class="container-fluid  py-3 " >
+    <div class ="container">
+     <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body">
+            <div class="row align-items-center justify-content-center">
+                <!-- school logo -->
+                <div class="col-12 col-md-2 text-center mb-3 mb-mb-0">
+                    <img src="/static/school_logo.jpg"  class="img-fluid"  style="max-height:110px " alt="logo" >
+                </div>
+                <!-- SCHOOL INFORMATION -->
+                <div class="col-12 col-md-10 text-center ">
+                    <h1 class="fw-bold text-success mb-2" >
+                        Government High School Gujra
+                    </h1>
+                    <h4>
+                        Block & District: Dhamtari, Chhattisgarh
+                    </h4>
+                    <span class="badge bg-secondary fs-6"> U-Dise Code: 22133003903</span>
+                </div>
+
+            </div>
+        </div>
+     </div>
+</header>
+
+    <div class="container">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-primary text-white text-center rounded-top-4">
+                    <h2> School Management System</h2>
+                </div>
+            </div>
+    </div>
+
+<!-- navvar -->
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Academics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Download</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fees Structure
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Class IX</a></li>
+            <li><a class="dropdown-item" href="#">Class X</a></li>
+            <li><a class="dropdown-item" href="#">Class XI</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+
+
+<!--- main Content --->
+<main class="container-fluid py-4">
+  {% block content %}
+  {% endblock %}
+
+</main>
+
+<!--- bootstrap js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

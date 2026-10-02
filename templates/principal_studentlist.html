@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Governmrnt High School Gujra </title>
+    <link rel="stylesheet" href="static/style.css" >
+</head>
+<body>
+<div class="header">
+      <h1> Government High School Gujra</h1>
+      <h2> vikas khand and District- Dhamtari, Chhattisgarh</h2>
+      </div>
+<div class="container">
+
+    <h2> all student list</h2>
+    {% for student in student %}
+        {{ student.student_name }} |{{ student.father_name }}|{{student.status}}| {{student.user_id}}
+        <br><br>
+    {% endfor %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Government High School Gujra </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css" >
+    <link rel="stylesheet" href="static/media.css" >
+
+</head>
+<body>
+<header class="container-fluid  py-3 " >
+    <div class ="container">
+     <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body">
+            <div class="row align-items-center justify-content-center">
+                <!-- school logo -->
+                <div class="col-12 col-md-2 text-center mb-3 mb-mb-0">
+                    <img src="/static/school_logo.jpg"  class="img-fluid"  style="max-height:110px " alt="logo" >
+                </div>
+                <!-- SCHOOL INFORMATION -->
+                <div class="col-12 col-md-10 text-center ">
+                    <h1 class="fw-bold text-success mb-2" >
+                        Government High School Gujra
+                    </h1>
+                    <h4>
+                        Block & District: Dhamtari, Chhattisgarh
+                    </h4>
+                    <span class="badge bg-secondary fs-6"> U-Dise Code: 22133003903</span>
+                </div>
+
+            </div>
+        </div>
+     </div>
+</header>
+
+    <div class="container">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-primary text-white text-center rounded-top-4">
+                    <h2> School Management System</h2>
+                </div>
+            </div>
+    </div>
+
+<!-- navvar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SMS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Academics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Download</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fees Structure
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Class IX</a></li>
+            <li><a class="dropdown-item" href="#">Class X</a></li>
+            <li><a class="dropdown-item" href="#">Class XI</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div  class="container my-2">
+        <div class="row g-4">
+            <!-- objective card --->
+            <div class="col-12 col-lg-7" >
+                <div class="card shadow-sm border-0 rounded-4 h-100">
+                    <div class="card-header bg-success text-white text-center rounded-top-4">
+                        <h4 class="mb-0"> Our Objective </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-md-4 text-center mb-3 mb-mb-md-0">
+                                 <img src="/static/pm_modi.jpg"  class="img-fluid rounded-circle "  style="max-width:130px" alt="logo" >
+                            </div>
+                            <div class="col-md-8">
+                                 <p> Prayers for blessings and protection Good prayers include short, sincere requests such as “Lord, have mercy on me,” “Guide me with Your wisdom,” and “Fill me with peace,” as well as structured prayers for strength, peace, family, hope, and daily challenges</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--- login --->
+            <div class="col-12 col-lg-5" >
+                <div class="card shadow-sm border-0 rounded-4 h-100">
+                    <div class="card-header bg-success text-white text-center rounded-top-4">
+                        <h4 class="mb-0"> Login here</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/login" method="POST">
+                            <label for="role">Role:</label>
+                            <select name="role" id="role">
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="admin">Admin</option>
+                                <option value="principal">Principal</option>
+                                <option value="clerk">Clerk</option>
+                            </select> <br>
+                            <label for="username">User Name :</label>
+                            <input type="text" id="username" name="username" placeholder="Your name"><br>
+                            <label for="password"> Password   :</label>
+                            <input type="password" id="password" name="password" placeholder="password">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                         <div class="alert align-center" role="alert">OR</div>
+                         <a class="btn btn-secondary btn-lg my-1" href="/login/google" role="button">Login with Google</a><br>
+                         <a class="btn btn-secondary btn-lg my-1" href="#" role="button">Login with Facebook</a><br>
+                         <a class="btn btn-secondary btn-lg my-1" href="#" role="button">Login with Twitter</a>
+
+                        <a href="student_register.html"  type="button" >Not registered, Sign Up here </button></a>
+                    </div>
+
+            </div>
+        </div>
+
+            <div class="container bg-light text-center rounded-4">
+                <h3> Our facilities </h3>
+                <div class="row align-items-center justify-content-center mb-4 md-5 rounded-4 ">
+                    <div class="w-25 h-25 col-md-4 mb-5">
+                        <h5> Smart Class</h5>
+                        <img src="/static/smart_class.jpg"  class="img-fluid w-25 h-25 "" alt="logo" >
+                    </div>
+                    <div class=" col-md-4 mb-5">
+                        <h5> Schoolarship</h5>
+                         <img src="/static/scholarship.jpg"  class="img-fluid w-25 h-50 " alt="logo" >
+                    </div>
+                   <div class="w-25 h-25 col-md-4 mb-5">
+                        <h5> Free Uniform and Books</h5>
+                         <img src="/static/pm_modi.jpg"  class="img-fluid w-25 h-25 " alt="logo" >
+                    </div>
+                    <div class="w-25 h-25 col-md-4 mb-5">
+                        <h5> well trained Teachers & faculties</h5>
+                         <img src="/static/faculty.jpg"  class="img-fluid w-25 h-25 " alt="logo" >
+                    </div>
+                    <div class="w-25 h-25 col-md-4 mb-5">
+                        <h5> Wi-fi enabled Campus</h5>
+                         <img src="/static/school_logo.jpg"  class="img-fluid w-25 h-25 " alt="logo" >
+                    </div>
+                    <div class="w-25 h-25 col-md-4 mb-5">
+                        <h5> Sports and Cultural Activities</h5>
+                         <img src="/static/sports.avif"  class="img-fluid w-25 h-25 " alt="logo" >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+   <div class="container-fluid bg-light text-center rounded-4">
+       <div class="container bg-light text-center rounded-4">
+           <div class="row">
+               <div class="Col-12 col-md-4" >
+                    <div class="Card">
+        <div class="card-header bg-success text-white text-center rounded-top-4">
+           <img src="/sports.jpg"  class="img-fluid" alt="logo" >
+            featured
+        </div>
+        <div class="card-body ">
+            <h5 class="card-title text-center"> special title</h5>
+            <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam consequuntur error laborum nam necessitatibus nisi perferendis recusandae tenetur. Commodi dolorem doloribus ea eligendi fugiat in mollitia quis velit voluptatibus.</p>
+            <!-- Button trigger modal -->
+
+            <a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+            </button> </a>
+        </div>
+        <div class="card-footer text-center">
+            <h3> 2 days ago</h3>
+        </div>
+
+                    </div>
+               </div>
+               <div class="Col-12 col-md-8" >
+                   <div class="carousel slide m-5" data-bs-ride="carousel" id ="slider1">
+                       <div class="carousel-inner">
+                           <div class="carousel-item active">
+                               <img src="/static/faculty.jpg"  class="d-block h-100 w-100" alt="...">
+                           </div>
+                           <div class="carousel-item ">
+                               <img src="/static/scholarship.jpg"  class="d-block h-100 w-100" alt="...">
+                           </div>
+                           <div class="carousel-item ">
+                               <img src="/static/smart_class.jpg"  class="d-block h-100 w-100" alt="...">
+                           </div>
+                       </div>
+                       <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#slider1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#slider1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#slider1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                       </div>
+                       <button class="carousel-control-prev" type="button" data-bs-target="#slider1" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                       </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#slider1" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                         </button>
+               </div>
+   </div>
+ <!-- Button trigger modal -->
+
+            <a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+            </button> </a>
+
+
+
+<footer div class=" card shadow rounded-4 ">
+    <div class="container-fluid bg-light text-center rounded-4">
+         <div class="container align-items-center justify-content-center">
+             <div class="row " >
+                 <div class="col-12 col-md-4 text-center me-1" style="background-color: #30799B" >
+                     <h2> About us </h2>
+                     <small>Lorem ipsum dolor sit amet, praesentium ullam vero. Impedit maxime obcaecati quas quo. Nisi optio pariatur placeat voluptatem?</small>
+                 </div>
+                  <div class="col-12 col-md-4 text-center me-1 "  style="background-color: #201220">
+                     <h2> Contact Us </h2>
+                      <small> village _ Gujra<br/> District- Dhamtari (c.g.)</small>
+                 </div>
+                 <div class="col-12 col-md-3 text-center" style="background-color: #307455" >
+                     whatsup us
+                    <img src="/static/whatspp.jpg"  class="img-fluid w-25 h-25 " alt="logo" >
+                 </div>
+             </div>
+    </div>
+</footer>
+
+
+               <!--- modal --->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

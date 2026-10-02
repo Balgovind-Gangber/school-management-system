@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Student Dashboard
+{% endblock %}
+{% block content %}
+
+    <h2> student dashboard</h2>
+    <h2> welcome, {{student.student_name}}</h2>
+  <table>
+    <tr><th> student Name:</th><td>{{student.student_name}}</td></tr>
+    <hr><th> father Name: </th><td>{{student.father_name}}</td></tr>
+    <tr><th> Mother Name:</th><td> {{student.mother_name}}</td></tr>
+
+
+
+
+  </table>
+
+    <a href="/logout" type="button"> logout </a><br>
+
+</div>
+
+{%end block%}

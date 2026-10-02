@@ -1,0 +1,12 @@
+.sidebar{
+    background: green;
+    min-height: 100vh;
+}
+.sidebar button{
+    color: white;
+    background: blueviolet;
+}
+.sidebar button:hover{
+    color: white;
+    background-color: #30799B;
+}

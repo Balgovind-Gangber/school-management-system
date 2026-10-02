@@ -1,0 +1,169 @@
+{%extends 'base.html' %}
+{% block title %}
+new teacher dashboard
+{% endblock %}
+{% block content%}
+
+<div Class="container-fluid my-2">
+    <div class="container">
+      <div class="row g-4">
+         <div class="col-md-3 col-lg-3 sidebar p-3" >
+            <h4> Teacher Panel </h4>
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" >
+                <button class="nav-item active text-start id="fees-tab" data-bs-toggle="pill" data-bs-target="#fees" type="button role="tab ">
+                    <i class="bi bi-cash-stack me-2"></i> fees collection</button>
+                <button class="nav-item  text-start id="attendance-tab" data-bs-toggle="pill" data-bs-target="#attendance" type="button role="tab">
+                    <i class="bi bi-calendar-check me-2"></i> attendance </button>
+                <button class="nav-item  text-start id="fill-marks-tab" data-bs-toggle="pill" data-bs-target="#fill-marks" type="button role="tab">
+                    <i class="bi bi-pencil-square me-2"></i> Fill marks</button>
+                <button class="nav-item  text-start id="report-generation-tab" data-bs-toggle="pill" data-bs-target="#report_generation" type="button role="tab">
+                    <i class="bi bi-file-earmark-bar-graph me-2"></i> Report generation</button>
+                <button class="nav-item text-start id="download-pay-slip-tab" data-bs-toggle="pill" data-bs-target="#download_pay_slip" type="button role="tab">
+                    <i class="bi bi-receipt me-2"></i> Download pay slip</button>
+            </div>
+         </div>
+
+
+            <div class="col-md-9 col-lg-9" >
+              <div class="tab-content" id="v-pills-tabContent">
+
+                  <!--- fees collection module --->
+                  <div class="tab-pane fade show active" id="fees" role="tabpanel">
+
+                    <div class="container">
+
+                <h1 class=" text-center" style="background-color: #485F6E  ">  this fees collection interface </h1>
+                    <div class="card card-body m-0" style="align-content: center ">
+                    <form  action="/search", methods=["POST"]>
+                        <label> Class: </label>
+                        <select name="class_name" required>
+                             <option value="9"  > Class 9 </option>
+                            <option value="10" > Class 10 </option>
+                        </select>
+                        <button type="submit">Show student</button>
+
+                   </form>
+                </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-responsive table-bordered table-striped text-center">
+                     <thead >
+                     <tr>
+                                <th class="fw-bold">Student Name </th>
+                                <th> Father name  </th>
+                                <th> Class name  </th>
+                                <th> status  </th>
+                                <th> User id</th>
+                                <th> pay fees </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for student in student %}
+                                 <tr>
+                                     <td class="fw-bold">{{ student.student_name }}</td>
+                                     <td><span class="badge bg-success">{{ student.father_name }}</span></td>
+                                     <td><span class="badge bg-success">{{ student.class_name }}</span></td>
+                                     <td><span class="badge bg-primary">{{ student.status }}</span></td>
+                                     <td>{{ student.user_id }}</td>
+                                     <td> <a href="/teacher/fees/student/{{student.user_id}}"> pay now </a></td>
+                                 </tr>
+                            {% endfor %}
+
+                                      </tbody>
+                                      </table>
+                    </div>
+                    </div>
+                  </div>
+
+                 <!--- attendance module --->
+                  <div class="tab-pane fade" id="attendance" role="tabpanel">
+                      <div class="container">
+                        <h1 class=" text-center" style="background-color: #485F6E  ">student attendance</h1>
+                            <div class="card card-body m-0" style="align-content: center ">
+                             <form  action="/teacher/attendance", methods=["POST"]>
+                             <label> class: </label>
+                             <select name="class_name" required>
+                                    <option value="9" {% if class_name=="9" %} selected{% endif %} > Class 9 </option>
+                                     <option value="10" {% if class_name=="10" %} selected{% endif %} > Class 10 </option>
+                             </select>
+                             <label> attendance date </label>
+                                 <input type="date" name="attendance_date" value="{{attendance_date}}" required>
+                                 <button type="submit">Show student</button>
+
+                                </form>
+                             </div>
+                          <div class="container my-2" style="align-content: center ">
+                              <form action="/teacher/attendance/save" method="Post">
+                                        <input type="hidden" name="class_name" value="{{class_name}}"> <input type="hidden" name="attendance_date" value="{{attendance_date}}">
+                                <table class="table table-hover table-responsive table-bordered table-striped text-center">
+                                  <thead>
+                                  <tr>
+                                        <th>student id</th>
+                                        <th>student name</th>
+                                        <th>status</th>
+                                  </tr>
+                                  </thead>
+                                    <tbody>
+                                        {% for student in students %}
+                                        <tr>
+                                            <td>{{student.id}}</td>
+                                            <td>{{student.student_name}}</td>
+                                            <td><input type="radio" name="status_{{student.id}}" value="present" checked> present
+                                                <input type="radio" name="status_{{student.id}}" value="absent"> absent</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                </br>
+                                <button type="submit">Save attendance </button>
+
+                              </form>
+                            </div>
+                      </div>
+                      </div>
+
+                    <!--- fill marks module --->
+                  <div class="tab-pane fade" id="fill-marks" role="tabpanel">
+                    <h3> this fill marks interface</h3>
+                      <div class="card card-body m-0" style="align-content: center ">]
+
+                      there will be table showing class name wise student name list and corresponding subjects in which
+                          teacher will enrty the marks obtained and table will generate automatic results based on marks
+                        <div class="d-flex card card-header m-0" style=" d-flex align-content: center ">
+                           <form action="/searchmarks", methods="POST")
+                            <label for class> Class:</label>
+                            <select name="class_name" required>
+                                <option value="9"  > Class 9 </option>
+                                <option value="10"  > Class 10 </option>
+                            </select>
+                            <button type="submit">Show STUDENT</button>
+
+                        </div>
+
+
+
+
+
+                      </div>
+                  </div>
+
+
+                 <!--- report generation module --->
+                 <div class="tab-pane fade" id="report_generation" role="tabpanel">
+                  <h3> this report generation interface</h3>
+                </div>
+
+                <!--- download pay slip module --->
+                <div class="tab-pane fade" id="download_pay_slip" role="tabpanel">
+                  <h3> this download pay slip interface</h3>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+ {%endblock%}

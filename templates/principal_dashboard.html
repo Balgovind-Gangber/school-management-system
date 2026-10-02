@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+Principal Dashboard
+{% endblock %}
+{% block content %}
+<div class="container">
+
+    <h2> welcome {{username}}</h2>
+    <p> you are logged in as principal </p>
+    <a href="/principal/allstudentlist" class="button">STUDENT MANAGEMENT</a><br><br>
+    <a href="#" class="button">EMPLOYEE MANAGEMNET</a><br><br>
+    <a href="/logout" class="button">logout</a>
+</div>
+{% endblock %}

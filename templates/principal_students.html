@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pending student aplication</title>
+</head>
+<body>
+    <h1>pending student application</h1>
+    {% for student in students %}
+        <p>
+          {{student.student_name}}-class{{student.class_name}}-{{student.father_name}}
+
+        <a href="/principal/student/approve/{{ student.id}}">
+            <button class="button">Approve</button> </a>
+             </p>
+
+    {% endfor %}
+
+
+
+</body>
+</html>

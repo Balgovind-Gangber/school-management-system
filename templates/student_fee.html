@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}
+student fees
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card shadow rounded-4">
+        <div class="card-header">
+            <h4>fees details of student: <span class="fw-bold" >{{student.student_name}}</span <h4>
+        </div>
+        <div class="card-body">
+            <form action="/teacher/fees/student/deposit/{{student.id}}" method="POST">
+
+                <p>Total amount of course: {{total_amount}}</p>
+                <p> Amount paid : {{paid_amount}}</p>
+                <p>Due Amount: {{due_amount}}</p>
+                <label> enter amount to be deposited</label><input type="float" name="deposit_amount" id="deposit_amount" min="1" max="{{total_amount}}" required>
+                <button type="submit" class="btn btn-success">deposit</button>
+            </form>
+        </div>
+        <div class="card-footer ">
+
+                <div class="container-fluid">
+                     <!--- receipt area --->
+                    {% if receipt %}
+                    <div class="row">
+                        <div class="col text-start ">
+                            <h6 class="bagde bg-success"> recipt generated </h6>
+                            <table class="table table-bordered text-center table-responsive-sm">
+                                <thead>
+                                    <tr>
+                                        <th> receipt No.</th>
+                                        <th>student id </th>
+                                        <th>student name</th>
+                                        <th>father name</th>
+                                        <th>status</th>
+                                        <th>Deposit Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{receipt.receipt_no}}</td>
+                                    <td>{{receipt.student_id}}</td>
+                                    <td>{{receipt.student_name}}</td>
+                                    <td>{{student.father_name}}</td>
+                                    <td>{{receipt.status}}</td>
+                                    <td> {{receipt.deposit_amount}} </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                        <div class="col text-start no-print">
+                            <button type="button" class="btn btn-primary" onclick="window.print();">Print</button>
+                            <a href="api.whatsapp.com/send?text=Fees%20Deposit%20Receipt:%20Amount%20{{receipt.depost_amount}}%20Receirvrd%20for%20{{receipt.student_name}}" target="_blank" class="btn btn-primary"> <i class="bi bi-whatsapp "> share via whatsapp</i></a>
+                            <a class="btn btn-secondary"> <i class="bi bi-message "> share via message</i></a>
+                        </div>
+                    </div>
+            {% endif %}
+    <div>
+    </div>
+</div>
+
+        </div>
+
+
+
+{% endblock %}
+
